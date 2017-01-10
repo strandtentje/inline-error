@@ -1,0 +1,73 @@
+<table class="big oopsie" style="width: 100%;" border="1">
+	<tr>
+		<td>
+			IP
+		</td>
+		<td>
+			{% remoteip %}
+		</td>
+	</tr>
+	<tr>
+		<td>
+			path
+		</td>
+		<td>
+			{% pathsection %}
+		</td>
+	</tr>
+	<tr>
+		<td>
+			query
+		</td>
+		<td>
+			{% querysection %}
+		</td>
+	</tr>
+	<tr>
+		<td>
+			Message
+		</td>
+		<td>
+			<ul>
+				{% parsedmessage %}
+			</ul>
+		</td>
+	</tr>
+	<tr>
+		<td>
+			Causing service
+		</td>
+		<td>
+			{% errorcause %}
+		</td>
+	</tr>
+	<tr>
+		<td>
+			Defining file
+		</td>
+		<td>
+			{% errorfile %}
+		</td>
+	</tr>
+	<tr>
+		<td>
+			Initializing Error
+		</td>
+		<td>
+			{% errorinitializing %}
+		</td>
+	</tr>
+	<tr>
+		<td colspan="2">
+			<a href="#!" onclick="document.getElementById('stack{% id %}').style.display='table-cell'">show stacktrace</a> &middot;
+			<a href="#!" onclick="document.getElementById('stack{% id %}').style.display='none'">hide stacktrace</a>		
+		</td>
+	</tr>
+	<tr class="trace">
+		<td colspan="2" class="stack" id="stack{% id %}" style="display: none;">
+			<ul>
+				{% stacktrace %}
+			</ul>
+		</td>
+	</tr>
+</table>
